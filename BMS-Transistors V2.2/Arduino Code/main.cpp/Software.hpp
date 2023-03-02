@@ -40,6 +40,11 @@ class Software{
       mcp2515.setBitrate (CAN_500KBPS, MCP_8MHZ);
       mcp2515.setNormalMode();
     }
+    //
+    //
+    //AQUI VAI A PARTE QUE FALTA, A TRANSMISSÃO DAS INFORMAÇÕES VIA CAN
+    //
+    //
     void transmitirInforBus(void){
       if(segundos < millis()){
         canMsg.can_id  = 0x036;     //CAN id = 0x036
@@ -65,6 +70,7 @@ class Software{
         transmitirInforBus();        
       }
     }
+    // PARA TESTAR SE OS VALORES COLETADOS FAZEM SENTIDO
     void printInfors(void){
       Serial.println("-----------------------------------------------------------------"); 
       Serial.print("Corrente : ");
